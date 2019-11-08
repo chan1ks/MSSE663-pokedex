@@ -6,9 +6,12 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./dashboard.component.sass'],
 })
 export class DashboardComponent implements OnInit {
+  constructor() {}
   pokemen: Array<string>;
 
-  constructor() {}
+  log() {
+    console.log('received');
+  }
 
   ngOnInit() {
     this.pokemen = ['Charizard', 'Bulbasaur', 'Squirtle'];

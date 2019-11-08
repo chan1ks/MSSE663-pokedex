@@ -1,5 +1,8 @@
 <h1>Recent Pokemon Viewed</h1>
 <p>Count: {{ pokemen.length }}</p>
-<ul *ngFor="let pokemon of pokemen">
-  <li>{{ pokemon }}</li>
-</ul>
+
+<app-pokemon-list
+  *ngIf="pokemen.length"
+  [pokemen]="pokemen"
+  (received)="log()"
+></app-pokemon-list>
