@@ -1,16 +1,26 @@
-import { BrowserModule } from "@angular/platform-browser";
-import { NgModule } from "@angular/core";
+import { BrowserModule } from '@angular/platform-browser';
+import { NgModule } from '@angular/core';
 
-import { AppRoutingModule } from "./app-routing.module";
-import { HttpClientModule } from "@angular/common/http";
+import { AppRoutingModule } from './app-routing.module';
+import { HttpClientModule } from '@angular/common/http';
 
-import { AppComponent } from "./app.component";
-import { DashboardComponent } from "./dashboard/dashboard.component";
-import { HeaderComponent } from "./components/header/header.component";
+import { DashboardModule } from './dashboard/dashboard.module';
+import { HomeModule } from './home/home.module';
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import { HeaderModule } from './header/header.module';
+
+import { AppComponent } from './app.component';
 
 @NgModule({
-  declarations: [AppComponent, DashboardComponent, HeaderComponent],
-  imports: [BrowserModule, AppRoutingModule, HttpClientModule],
+  declarations: [AppComponent, PageNotFoundComponent],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    HttpClientModule,
+    HeaderModule,
+    HomeModule,
+    DashboardModule
+  ],
   providers: [],
   bootstrap: [AppComponent]
 })
