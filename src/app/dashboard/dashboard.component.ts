@@ -1,11 +1,11 @@
-import { PokemonService } from '../services/pokemon.service';
+import { PokemonService } from '../shared/services/pokemon.service';
 import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-dashboard',
   templateUrl: './dashboard.component.html',
-  styleUrls: ['./dashboard.component.sass'],
+  styleUrls: ['./dashboard.component.sass']
 })
 export class DashboardComponent implements OnInit {
   pokemen$: Observable<any>;
