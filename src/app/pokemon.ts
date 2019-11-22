@@ -13,9 +13,16 @@ export class Pokemon {
   gender: string;
   description: string;
 
-  constructor(id: number, name:string, type: Array<string>, height:number, weight:number , abilities: Array<string>){
-    this.id=id;
-    this.name=name;
+  constructor(
+    id: number,
+    name: string,
+    type: Array<string>,
+    height: number,
+    weight: number,
+    abilities: Array<string>
+  ) {
+    this.id = id;
+    this.name = name;
     this.type = type;
     this.height = height;
     this.weight = weight;
