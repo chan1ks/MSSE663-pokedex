@@ -10,8 +10,7 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
 import { HeaderModule } from './header/header.module';
 
 import { AppComponent } from './app.component';
-import {PokemonDetailsModule} from './pokemon-details/pokemon-details.module'
-
+import { PokemonDetailsModule } from './pokemon-details/pokemon-details.module';
 
 @NgModule({
   declarations: [AppComponent, PageNotFoundComponent],
@@ -25,6 +24,6 @@ import {PokemonDetailsModule} from './pokemon-details/pokemon-details.module'
     DashboardModule
   ],
   providers: [],
-  bootstrap: [AppComponent],
+  bootstrap: [AppComponent]
 })
 export class AppModule {}

@@ -1,4 +1,4 @@
-import { Component, OnInit, Input} from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Location } from '@angular/common';
 import { Pokemon } from '../pokemon';
@@ -11,18 +11,23 @@ import { of, Observable } from 'rxjs';
   styleUrls: ['./pokemon-details.component.sass']
 })
 export class PokemonDetailsComponent implements OnInit {
-  @Input() pokemonID: string
+  @Input() pokemonID: string;
   private pokemon$: Observable<Pokemon>;
-  
-  constructor(private route: ActivatedRoute, private location: Location, private pokemonService: PokemonService) { }
+
+  constructor(
+    private route: ActivatedRoute,
+    private location: Location,
+    private pokemonService: PokemonService
+  ) {}
 
   ngOnInit() {
-    this.getPokemonByID()
+    this.getPokemonByID();
   }
 
-  getPokemonByID(){
-    this.pokemon$= this.pokemonService.getPokemonByIDString(this.route.snapshot.paramMap.get('id'));
-    console.log(this.pokemon$)
-
+  getPokemonByID() {
+    this.pokemon$ = this.pokemonService.getPokemonByIDString(
+      this.route.snapshot.paramMap.get('id')
+    );
+    console.log(this.pokemon$);
   }
 }
