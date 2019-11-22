@@ -1,0 +1,50 @@
+<div *ngIf="pokemon$ | async as pokemon">
+    <div>
+        <img src={{pokemon.sprites.front_default}} alt="Picture Missing">
+        <p>{{pokemon.name | uppercase}} Details</p>
+    </div>
+    <div><span>id: </span>{{pokemon.id}}</div>
+    <div>
+        <label>name: {{pokemon.name}}</label>
+    </div> 
+    <div>
+        <label>Types:</label>
+        <li *ngFor="let typeItem of pokemon.types">
+            <label>{{typeItem.type.name}}</label>
+        </li>
+    </div>
+    <div>
+        <label>Abilities:</label>
+        <li *ngFor="let abilityItem of pokemon.abilities">
+            <label>{{abilityItem.ability.name}}</label>
+        </li>
+    </div>
+    <div>
+        <label>Moves:</label>
+        <li *ngFor="let moveItem of pokemon.moves">
+            <label>{{moveItem.move.name}}</label>
+            <ul *ngFor="let vers of moveItem.version_group_details">
+                <label>Move learned at level: {{vers.level_learned_at}}</label><br>
+                <label>Move Learn Method: {{vers.move_learn_method.name}}</label><br>
+                <label>Game version: {{vers.version_group.name}}</label><br>
+            </ul>
+        </li>
+    </div>
+    <div>
+        <label>Height: {{pokemon.height}}</label>
+    </div>
+    <div>
+        <label>Weight: {{pokemon.weight}}</label>
+    </div>
+     <div>
+        <label>Stats:</label>
+        <li *ngFor="let statItem of pokemon.stats">
+            <label>{{statItem.stat.name}}</label><br>
+            <label>Base Statistic: {{statItem.base_stat}}</label><br>
+            <label>Effort: {{statItem.effort}}</label><br>
+        </li>
+    </div>
+    
+</div>
+
+

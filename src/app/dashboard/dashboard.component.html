@@ -3,6 +3,10 @@
 <div *ngIf="pokemen$ | async as pokemen">
   <p>Count: {{ pokemen.length }}</p>
   <ul *ngFor="let pokemon of pokemen">
-    <li>{{ pokemon.name }}</li>
+    <li>
+      <a routerLink='detail/{{pokemon.name}}'>
+        <span class="badge">{{pokemon.id}}</span> {{pokemon.name}}
+      </a>
+    </li>
   </ul>
 </div>
