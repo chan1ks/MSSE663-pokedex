@@ -14,4 +14,9 @@ export class PokemonService {
       .get('https://pokeapi.co/api/v2/pokemon/')
       .pipe(map((data: any) => data.results));
   }
+  getPokemonByIDString(searchString: string): Observable<any> {
+    return this.http
+      .get('https://pokeapi.co/api/v2/pokemon/' + searchString)
+      .pipe(map(data => data));
+  }
 }
