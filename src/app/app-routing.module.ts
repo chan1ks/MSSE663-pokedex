@@ -3,11 +3,8 @@ import { Routes, RouterModule } from '@angular/router';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { HomeComponent } from './home/home.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
-<<<<<<< HEAD
 import { PokemonDetailsComponent } from './pokemon-details/pokemon-details.component';
-=======
 import { SettingsComponent } from './settings/settings.component';
->>>>>>> settings page
 
 const routes: Routes = [
   {
