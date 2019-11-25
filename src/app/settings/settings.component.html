@@ -1,0 +1,13 @@
+<h2>User Settings</h2>
+
+<form [formGroup]="settingsForm">
+  <label>
+    Username: <input name="user" type="user" formControlName="user" />
+  </label>
+  <br />
+  <label>
+    Password: <input name="pass" type="password" formControlName="pass" />
+  </label>
+
+  <button (click)="doSave()">Save</button>
+</form>
