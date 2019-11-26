@@ -3,8 +3,8 @@ import { ActivatedRoute } from '@angular/router';
 import { Location } from '@angular/common';
 import { Pokemon } from '../pokemon';
 import { PokemonService } from '../shared/services/pokemon.service';
-import * as $ from 'jquery';
 import { of, Observable } from 'rxjs';
+
 @Component({
   selector: 'app-pokemon-details',
   templateUrl: './pokemon-details.component.html',

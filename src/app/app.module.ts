@@ -8,6 +8,7 @@ import { DashboardModule } from './dashboard/dashboard.module';
 import { HomeModule } from './home/home.module';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { HeaderModule } from './header/header.module';
+import { SettingsModule } from './settings/settings.module';
 
 import { AppComponent } from './app.component';
 import { PokemonDetailsModule } from './pokemon-details/pokemon-details.module';
@@ -21,7 +22,8 @@ import { PokemonDetailsModule } from './pokemon-details/pokemon-details.module';
     HeaderModule,
     HomeModule,
     PokemonDetailsModule,
-    DashboardModule
+    DashboardModule,
+    SettingsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
