@@ -25,6 +25,11 @@ const routes: Routes = [
     pathMatch: 'full'
   },
   {
+    path: 'detail/:name',
+    component: PokemonDetailsComponent,
+    pathMatch: 'full'
+  },
+  {
     path: '',
     redirectTo: '/home',
     pathMatch: 'full'

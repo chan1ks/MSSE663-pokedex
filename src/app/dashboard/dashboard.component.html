@@ -4,7 +4,7 @@
   <p>Count: {{ pokemen.length }}</p>
   <ul *ngFor="let pokemon of pokemen">
     <li>
-      <a routerLink='detail/{{pokemon.name}}'>
+      <a routerLink='/detail/{{pokemon.name}}'>
         <span class="badge">{{pokemon.id}}</span> {{pokemon.name}}
       </a>
     </li>
