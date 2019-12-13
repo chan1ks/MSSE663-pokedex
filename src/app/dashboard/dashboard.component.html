@@ -1,12 +1,39 @@
-<h1>Recent Pokemon Viewed</h1>
+<div class='row'>
+  <div class='column'>
+    <h1>Recent Pokemon Viewed</h1>
 
-<div *ngIf="pokemen$ | async as pokemen">
-  <p>Count: {{ pokemen.length }}</p>
-  <ul *ngFor="let pokemon of pokemen">
-    <li>
-      <a routerLink='/detail/{{pokemon.name}}'>
-        <span class="badge">{{pokemon.id}}</span> {{pokemon.name}}
-      </a>
-    </li>
-  </ul>
+    <div *ngIf="pokemen$ | async as pokemen">
+      <p>Count: {{ pokemen.length }}</p>
+      <ul *ngFor="let pokemon of pokemen">
+        <li>
+          <a routerLink='/detail/{{pokemon.name}}'>
+            <span class="badge">{{pokemon.id}}</span> {{pokemon.name}}
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+<br>
+  <h1>Favorites</h1>
+  <p>Count: 3</p>
+    <ul>
+      <li>
+        <a routerLink=''>
+          <span class="badge"></span> Favorite 1
+        </a>
+      </li>
+      <br>
+      <li>
+        <a routerLink=''>
+          <span class="badge"></span> Favorite 2
+        </a>
+      </li>
+      <br>
+      <li>
+        <a routerLink=''>
+          <span class="badge"></span> Favorite 3
+        </a>
+      </li>
+    </ul>
 </div>
