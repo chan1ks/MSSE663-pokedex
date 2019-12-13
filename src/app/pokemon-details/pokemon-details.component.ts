@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, ViewChild, ElementRef } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Location } from '@angular/common';
 import { Pokemon } from '../pokemon';
@@ -13,6 +13,8 @@ import { of, Observable } from 'rxjs';
 export class PokemonDetailsComponent implements OnInit {
   @Input() pokemonID: string;
   private pokemon$: Observable<Pokemon>;
+  @ViewChild('favorites', {static: false}) myFavoriteButton: ElementRef;
+  favorite = false;
 
   constructor(
     private route: ActivatedRoute,
@@ -29,5 +31,15 @@ export class PokemonDetailsComponent implements OnInit {
       this.route.snapshot.paramMap.get('id')
     );
     console.log(this.pokemon$);
+  }
+
+  toggleFavorites() {
+    this.favorite = !this.favorite
+    if(this.favorite) {
+      this.myFavoriteButton.nativeElement.className="star-five-grey star-five-yellow";
+    }
+    else {
+      this.myFavoriteButton.nativeElement.className="star-five-grey";
+    }
   }
 }
