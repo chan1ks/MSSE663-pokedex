@@ -15,6 +15,7 @@ import { SettingsModule } from './settings/settings.module';
 import { AppComponent } from './app.component';
 import { PokemonDetailsModule } from './pokemon-details/pokemon-details.module';
 import { LoginComponent } from './login/login.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -23,6 +24,7 @@ import { LoginComponent } from './login/login.component';
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
+    ReactiveFormsModule,
     HeaderModule,
     HomeModule,
     PokemonDetailsModule,
