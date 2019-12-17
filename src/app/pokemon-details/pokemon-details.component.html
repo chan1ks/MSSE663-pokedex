@@ -1,3 +1,4 @@
+<!-- Favorites Button -->
 <div>
     <button (click)="toggleFavorites()" >
         <span #favorites class='star-five-grey' title='favorite'></span>
@@ -5,52 +6,85 @@
 </div>
 
 <div *ngIf="pokemon$ | async as pokemon">
-    <div>
-        <img src={{pokemon.sprites.front_default}} alt="Picture Missing">
-        <p>{{pokemon.name | uppercase}} Details</p>
+
+    <div id='sprite'>
+        <img src={{pokemon.sprites.front_default}} alt="Picture Missing" title={{pokemon.name}}>
+        <p id='name'>{{pokemon.name | uppercase}} </p>
     </div>
-    <div><span>id: </span>{{pokemon.id}}</div>
-    <div>
-        <label>name: {{pokemon.name}}</label>
-    </div> 
-    <div>
-        <label>Types:</label>
-        <li *ngFor="let typeItem of pokemon.types">
-            <label>{{typeItem.type.name}}</label>
-        </li>
+
+<!-- Left Column -->
+    <div id='left'>
+<!-- Details Table -->
+      <table id='details' align=center>
+        <tr>
+          <th>Details </th></tr>
+        <tr>
+          <td id='noBorder'>id: {{pokemon.id}}</td>
+        </tr>
+        <tr>
+          <td id='noBorder'>name: {{pokemon.name}}</td>
+        </tr>
+        <tr>
+          <td id='noBorder'>height: {{pokemon.height}}</td>
+        </tr>
+        <tr>
+          <td id='noBorder'>weight: {{pokemon.weight}}</td>
+        </tr>
+      </table>
+      <br>
+
+<!-- Types Table -->
+      <table id='types' align=center>
+        <tr><th>Types</th></tr>
+        <tr *ngFor='let typeItem of pokemon.types'>
+          <td id='noBorder'>{{typeItem.type.name}}</td>
+        </tr>
+      </table>
+      <br>
+
+<!-- Abilities Table -->
+        <table id='abilities' align=center>
+        <tr><th>Abilities</th></tr>
+        <tr *ngFor="let abilityItem of pokemon.abilities">
+          <td id='noBorder'>{{abilityItem.ability.name}}</td>
+        </tr>
+      </table>
     </div>
-    <div>
-        <label>Abilities:</label>
-        <li *ngFor="let abilityItem of pokemon.abilities">
-            <label>{{abilityItem.ability.name}}</label>
-        </li>
+
+<!-- Stats Table -->
+<div id='right'>
+  <table id='stats'>
+    <tr><th colspan="3">Stats</th></tr>
+    <tr *ngFor="let statItem of pokemon.stats">
+      <td id='boldCap'>{{statItem.stat.name}}</td>
+        <td>Base Statistic: {{statItem.base_stat}}  </td>
+        <td>Effort:{{statItem.effort}} </td>
+    </tr>
+  </table>
+  </div>
+
+<!-- Moves Table -->
+    <div id='moves'>
+      <table id='movesTable'>
+        <tr><th colspan='4'>Moves</th></tr>
+        <tr *ngFor="let moveItem of pokemon.moves">
+          <td id='boldCap'>{{moveItem.move.name}}</td>
+          <table>
+            <tr *ngFor="let vers of moveItem.version_group_details" >
+              <td>Move Learned at Level: {{vers.level_learned_at}}</td>
+              <td>Move Learn Method: {{vers.move_learn_method.name}}</td>
+              <td>Game version: {{vers.version_group.name}}</td>
+          </tr>
+          </table>
+      </table>
+    <br>
     </div>
-    <div>
-        <label>Moves:</label>
-        <li *ngFor="let moveItem of pokemon.moves">
-            <label>{{moveItem.move.name}}</label>
-            <ul *ngFor="let vers of moveItem.version_group_details">
-                <label>Move learned at level: {{vers.level_learned_at}}</label><br>
-                <label>Move Learn Method: {{vers.move_learn_method.name}}</label><br>
-                <label>Game version: {{vers.version_group.name}}</label><br>
-            </ul>
-        </li>
-    </div>
-    <div>
-        <label>Height: {{pokemon.height}}</label>
-    </div>
-    <div>
-        <label>Weight: {{pokemon.weight}}</label>
-    </div>
-     <div>
-        <label>Stats:</label>
-        <li *ngFor="let statItem of pokemon.stats">
-            <label>{{statItem.stat.name}}</label><br>
-            <label>Base Statistic: {{statItem.base_stat}}</label><br>
-            <label>Effort: {{statItem.effort}}</label><br>
-        </li>
-    </div>
-    
+
+
+
 </div>
+
+
+
 
 
