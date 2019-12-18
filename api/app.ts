@@ -4,7 +4,7 @@ import bodyParser = require('body-parser');
 import cors = require('cors');
 import mongoose = require('mongoose');
 import { database } from './config/database.config';
-import { router } from './routes/pokemon.routes';
+import { router } from './routes/user.routes';
 
 // Database connection using mongoose
 mongoose.connect(database, {
@@ -37,7 +37,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 // Body Parser Middleware
 app.use(bodyParser.json());
 
-app.use('/pokedex', router);
+app.use('/users', router);
 
 // Index Route
 app.get('/', (req, res) => {

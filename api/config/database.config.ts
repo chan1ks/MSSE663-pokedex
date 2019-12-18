@@ -1,4 +1,4 @@
-export const database ='mongodb://localhost/pokedex';
+export const database = 'mongodb://localhost/pokeusers';
 
-export const  secret='pokedex-secret'
+export const  secret = 'pokedex-secret';
 
