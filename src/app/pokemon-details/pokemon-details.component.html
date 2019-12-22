@@ -15,7 +15,7 @@
 <!-- Left Column -->
     <div id='left'>
 <!-- Details Table -->
-      <table id='details' align=center>
+      <table id='details' align=center class="table table-dark">
         <tr>
           <th>Details </th></tr>
         <tr>
@@ -34,7 +34,7 @@
       <br>
 
 <!-- Types Table -->
-      <table id='types' align=center>
+      <table id='types' align=center class="table table-dark">
         <tr><th>Types</th></tr>
         <tr *ngFor='let typeItem of pokemon.types'>
           <td id='noBorder'>{{typeItem.type.name}}</td>
@@ -43,7 +43,7 @@
       <br>
 
 <!-- Abilities Table -->
-        <table id='abilities' align=center>
+        <table id='abilities' align=center class="table table-dark">
         <tr><th>Abilities</th></tr>
         <tr *ngFor="let abilityItem of pokemon.abilities">
           <td id='noBorder'>{{abilityItem.ability.name}}</td>
@@ -52,8 +52,8 @@
     </div>
 
 <!-- Stats Table -->
-<div id='right'>
-  <table id='stats'>
+<div id='right' style="padding-left : 5px">
+  <table id='stats' class="table table-dark">
     <tr><th colspan="3">Stats</th></tr>
     <tr *ngFor="let statItem of pokemon.stats">
       <td id='boldCap'>{{statItem.stat.name}}</td>
@@ -64,7 +64,7 @@
   </div>
 
 <!-- Moves Table -->
-    <div id='moves'>
+    <div id='moves' class="table">
       <table id='movesTable'>
         <tr><th colspan='4'>Moves</th></tr>
         <tr *ngFor="let moveItem of pokemon.moves">
