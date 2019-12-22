@@ -1,7 +1,6 @@
 <div class='row'>
-  <div class='column' >
+  <div class='col-sm-8' >
     <h1>Recent Pokemon Viewed</h1>
-
     <div *ngIf="pokemen$ | async as pokemen">
       <p>Count: {{ pokemen.length }}</p>
       <ul *ngFor="let pokemon of pokemen">
@@ -13,11 +12,8 @@
       </ul>
     </div>
   </div>
-
-<div class='column'></div>
-
-<br><br>
-  <div class='column' >
+  <!-- <br><br> -->
+  <div class='col-sm-4' >
   <h1>Favorites</h1>
   <p>Count: 3</p>
     <ul>
@@ -40,4 +36,6 @@
       </li>
     </ul>
   </div>
+<!-- <div class='column'></div> -->
+
 </div>
